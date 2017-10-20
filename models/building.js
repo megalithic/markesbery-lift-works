@@ -1,11 +1,23 @@
 export class Building {
-  constructor({elevators, floors}) {
+  constructor({bottomFloor, elevators, floors, topFloor}) {
     this.floors = floors;
     this.elevators = elevators;
+
+    // set initially, but unchangeable thereafter
+    this._topFloor = topFloor;
+    this._bottomFloor = bottomFloor;
   }
 
   get floorCount() {
     return this.floors().length;
+  }
+
+  get topFloor() {
+    return this._topFloor;
+  }
+
+  get bottomFloor() {
+    return this._bottomFloor;
   }
 
   get floors() {
@@ -27,4 +39,6 @@ export class Building {
       this._elevators = elevators;
     }
   }
+
+  moveElevator(floor, direction) {}
 }
