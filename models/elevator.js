@@ -1,10 +1,12 @@
+// TODO: determine clean way to flip between 2 element object for toggling
 import {ELEVATOR_DOOR} from '../constants/elevator-door.js';
 import {ELEVATOR_DIRECTION} from '../constants/elevator-direction.js';
 import {ELEVATOR_STATUS} from '../constants/elevator-status.js';
 
 export class Elevator {
-  constructor(props) {}
-
+  // @type
+  //   uuid
+  // @attribute
   get id() {
     return this._id;
   }
@@ -14,6 +16,10 @@ export class Elevator {
     }
   }
 
+  // TODO: determine if we want Enums or a boolean, e.g., <ELEVATOR_MOVING>[true|false]
+  // @type
+  //   <ELEVATOR_STATUS>[MOVING|IDLE]
+  // @attribute
   get status() {
     return this._status;
   }
@@ -25,6 +31,10 @@ export class Elevator {
     }
   }
 
+  // TODO: determine if we want Enums or a boolean, e.g., <ELEVATOR_OPENED>[true|false]
+  // @type
+  //   <ELEVATOR_DOOR>[OPENED|CLOSED]
+  // @attribute
   get door() {
     return this._door;
   }
@@ -36,6 +46,9 @@ export class Elevator {
     }
   }
 
+  // @type
+  //   integer
+  // @attribute
   get elevatorNumber() {
     return this._elevatorNumber;
   }
@@ -46,6 +59,10 @@ export class Elevator {
     }
   }
 
+  // TODO: determine if we want Enums or a boolean, e.g., <ELEVATOR_UP>[true|false]
+  // @type
+  //   <ELEVATOR_DIRECTION>[UP|DOWN]
+  // @attribute
   get direction() {
     return this._direction;
   }

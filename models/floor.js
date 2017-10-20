@@ -4,15 +4,22 @@ export class Floor {
     this.floorNumber = floorNumber;
   }
 
+  // @type
+  //   uuid
+  // @attribute
   get id() {
-    return this._id;
+    return this._id || null;
   }
+
   set id(id) {
     if (this._id !== id) {
       this._id = id;
     }
   }
 
+  // @type
+  //   integer
+  // @attribute
   get floorNumber() {
     return this._floorNumber;
   }
