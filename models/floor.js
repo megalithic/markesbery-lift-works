@@ -1,3 +1,5 @@
+import PubSub from 'pubsub-js';
+
 export class Floor {
   constructor({floorNumber, id}) {
     this.id = id;
@@ -27,5 +29,13 @@ export class Floor {
     if (this._floorNumber !== floorNumber) {
       this._floorNumber = floorNumber;
     }
+  }
+
+  requestElevator(targetFloor, direction) {
+    PubSub.publish('requestElevator', {
+      requestingFloor: this.floorNumber,
+      targetFloor,
+      direction,
+    });
   }
 }

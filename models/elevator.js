@@ -74,6 +74,11 @@ export class Elevator {
     }
   }
 
+  requestCurrentFloor() {
+    // TODO: publish a request to the building to know which floor the given elevator
+    // is presently at.
+  }
+
   onDirectionChange(direction) {
     console.log('elevator direction:', direction);
   }

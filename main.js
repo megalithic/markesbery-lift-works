@@ -7,9 +7,12 @@ import {ELEVATOR_STATUS} from './constants/elevator-status.js';
 
 import uuid from 'uuid';
 
+import PubSub from 'pubsub-js';
+
 export default class Simulation {
   constructor() {
     // TODO: setup pub/sub to listen to elevator requests from a specific floor
+    PubSub.subscribe('requestElevator', this.requestElevator);
   }
 
   // @type
@@ -63,22 +66,24 @@ export default class Simulation {
     });
   }
 
+  closestElevator(requestingFloor, targetFloor, direction) {
+    // TODO: determine closest elevator based on total number of floors, the
+    // current status of all elevators, and the current floor an elevator is
+    // occupying.
+  }
+
   // requests an elevator
   // - in response to an event requesting the elevator from a particular floor
   // - for known building,
   // - will determine closest elevator,
   // - based on direction needed, and
   // - return elevator to use
-  requestElevator(targetFloor, direction) {
-    // TODO: slight change, it makes more sense to have the floor notify when
-    // an elevator is needed. So we will need to have a given floor to fire the
-    // request.
-    //
-    // An event is responded to from the Simulation to tell the building to
-    // move the elevator to that requestingFloor.
-
-    const requestingFloor = null; // see above TODO
-    const elevator = closestElevator(requestingFloor, targetFloor, direction);
+  requestElevator({requestingFloor, targetFloor, direction}) {
+    const elevator = this.closestElevator(
+      requestingFloor,
+      targetFloor,
+      direction
+    );
 
     this.moveElevator(elevator, targetFloor, direction);
   }
