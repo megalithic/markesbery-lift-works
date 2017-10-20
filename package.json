@@ -1,0 +1,19 @@
+{
+  "name": "markesbery-lift-works",
+  "version": "1.0.0",
+  "description": "markesbery-lift-works",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megalithic/markesbery-lift-works.git"
+  },
+  "author": "Seth Messer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/megalithic/markesbery-lift-works/issues"
+  },
+  "homepage": "https://github.com/megalithic/markesbery-lift-works#readme"
+}
