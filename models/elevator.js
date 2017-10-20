@@ -1,5 +1,6 @@
-import {CLOSED, OPENED} from '../constants/elevator-door.js';
-import {IDLE, MOVING} from '../constants/elevator-status.js';
+import {ELEVATOR_DOOR} from '../constants/elevator-door.js';
+import {ELEVATOR_DIRECTION} from '../constants/elevator-direction.js';
+import {ELEVATOR_STATUS} from '../constants/elevator-status.js';
 
 export class Elevator {
   constructor(props) {}
@@ -17,9 +18,10 @@ export class Elevator {
     return this._status;
   }
   set status(status) {
-    if (this._status !== status) {
-      // this._onStatusChange(status);
-      this._status = status;
+    const targetStatus = ELEVATOR_STATUS[status.toUpperCase()];
+    if (this._status.toUpperCase() !== targetStatus) {
+      this._onStatusChange(targetStatus);
+      this._status = targetStatus;
     }
   }
 
@@ -27,9 +29,10 @@ export class Elevator {
     return this._door;
   }
   set door(door) {
-    if (this._door !== door) {
-      // this._onDoorChange(door);
-      this._door = door;
+    const targetDoor = ELEVATOR_DOOR[door.toUpperCase()];
+    if (this._door.toUpperCase() !== targetDoor) {
+      this._onDoorChange(targetDoor);
+      this._door = targetDoor;
     }
   }
 
@@ -43,11 +46,26 @@ export class Elevator {
     }
   }
 
-  get direction() {}
+  get direction() {
+    return this._direction;
+  }
   set direction(direction) {
-    if (this._direction !== direction) {
-      // this._onDirectionChange(direction);
-      this._direction = direction;
+    const targetDirection = ELEVATOR_DIRECTION[direction.toUpperCase()];
+    if (this._direction.toUpperCase() !== targetDirection) {
+      this._onDirectionChange(targetDirection);
+      this._direction = targetDirection;
     }
+  }
+
+  onDirectionChange(direction) {
+    console.log('elevator direction:', direction);
+  }
+
+  onStatusChange(status) {
+    console.log('elevator status:', status);
+  }
+
+  onDoorChange(door) {
+    console.log('elevator door:', door);
   }
 }

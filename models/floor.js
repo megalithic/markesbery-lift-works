@@ -18,10 +18,7 @@ export class Floor {
   }
   set floorNumber(floorNumber) {
     if (this._floorNumber !== floorNumber) {
-      // this._onFloorNumberChange(floorNumber);
       this._floorNumber = floorNumber;
     }
   }
-
-  summonElevator() {}
 }

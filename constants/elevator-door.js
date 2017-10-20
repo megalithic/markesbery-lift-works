@@ -1,4 +1,4 @@
-export const ELEVATOR_STATUSES = {
-  MOVING: 'MOVING',
-  IDLE: 'IDLE',
+export const ELEVATOR_DOOR = {
+  CLOSED: 'CLOSED',
+  OPENED: 'OPENED',
 };

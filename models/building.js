@@ -39,6 +39,4 @@ export class Building {
       this._elevators = elevators;
     }
   }
-
-  moveElevator(floor, direction) {}
 }
