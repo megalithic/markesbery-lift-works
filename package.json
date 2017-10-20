@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/megalithic/markesbery-lift-works/issues"
   },
-  "homepage": "https://github.com/megalithic/markesbery-lift-works#readme"
+  "homepage": "https://github.com/megalithic/markesbery-lift-works#readme",
+  "dependencies": {
+    "uuid": "^3.1.0"
+  }
 }
